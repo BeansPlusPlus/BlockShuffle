@@ -1,4 +1,4 @@
-package beansplusplus;
+package beansplusplus.blockshuffle;
 
 import beansplusplus.gameconfig.ConfigLoader;
 import net.md_5.bungee.api.ChatColor;
@@ -11,11 +11,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class TemplatePlugin extends JavaPlugin implements CommandExecutor, Listener {
+public class BlockShufflePlugin extends JavaPlugin implements CommandExecutor, Listener {
   private Game game;
 
   public void onEnable() {
     ConfigLoader.loadFromInput(getResource("config.yml"));
+    BlockShuffler.loadAllBlockTypes(getResource("blocks.yml"));
     getServer().getPluginManager().registerEvents(this, this);
     getCommand("start").setExecutor(this);
   }
@@ -35,7 +36,8 @@ public class TemplatePlugin extends JavaPlugin implements CommandExecutor, Liste
   public void onPlayerJoin(PlayerJoinEvent e) {
     Player player = e.getPlayer();
 
-    player.sendMessage(ChatColor.BLUE + "Welcome to <Template game>");
+    player.sendMessage(ChatColor.BLUE + "Welcome to Block Shuffle");
+    player.sendMessage(ChatColor.BLUE + "/start");
   }
 
 }

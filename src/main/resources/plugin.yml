@@ -1,9 +1,9 @@
-main: beansplusplus.TemplatePlugin
-name: TemplatePlugin
+main: beansplusplus.blockshuffle.BlockShufflePlugin
+name: BlockShufflePlugin
 version: 1
 api-version: 1.19
 description: >
-  Speedrunner vs hunter type game
+  Block shuffle gamemode
 commands:
   start:
     description: >

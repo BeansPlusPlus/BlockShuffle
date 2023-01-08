@@ -1,13 +1,24 @@
-team1:
-  type: player_list
-some_number:
-  type: double
-  default: 8
+blocks_to_win:
+  type: int
+  min: 1
+  default: 10
+pvp:
+  type: boolean
+  default: false
+keep_inventory:
+  type: boolean
+  default: true
+hunger:
+  type: boolean
+  default: false
+share_blocks:
+  type: boolean
+  default: true
+grace_period_seconds:
+  type: int
   min: 0
-some_enum:
-  type: enum
-  options:
-    - o1
-    - o2
-    - o3
-    - o4
+  default: 0
+minutes_per_block:
+  type: int
+  min: 0
+  default: 0
