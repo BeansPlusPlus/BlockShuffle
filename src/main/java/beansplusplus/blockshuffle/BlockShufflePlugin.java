@@ -37,7 +37,8 @@ public class BlockShufflePlugin extends JavaPlugin implements CommandExecutor, L
     Player player = e.getPlayer();
 
     player.sendMessage(ChatColor.BLUE + "Welcome to Block Shuffle");
-    player.sendMessage(ChatColor.BLUE + "/start");
+    player.sendMessage(ChatColor.GREEN + "/config" + ChatColor.WHITE + " to configure game setup");
+    player.sendMessage(ChatColor.GREEN + "/start" + ChatColor.WHITE + " to begin");
   }
 
 }
