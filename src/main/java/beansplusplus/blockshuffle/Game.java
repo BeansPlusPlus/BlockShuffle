@@ -68,9 +68,9 @@ public class Game implements Listener {
     boolean keepInventory = GameConfiguration.getConfig().getValue("keep_inventory");
     boolean pvp = GameConfiguration.getConfig().getValue("pvp");
 
-    for (World world : Bukkit.getWorlds()) {
-      world.setGameRule(GameRule.KEEP_INVENTORY, keepInventory);
-      world.setPVP(pvp);
+    for (World w : Bukkit.getWorlds()) {
+      w.setGameRule(GameRule.KEEP_INVENTORY, keepInventory);
+      w.setPVP(pvp);
     }
 
     Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
