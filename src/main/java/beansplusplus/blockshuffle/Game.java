@@ -51,6 +51,9 @@ public class Game implements Listener {
       player.setGameMode(GameMode.SURVIVAL);
     }
 
+    World world = Bukkit.getWorld("world");
+    world.setTime(1000);
+
     this.blocksToWin = GameConfiguration.getConfig().getValue("blocks_to_win");
     this.hunger = GameConfiguration.getConfig().getValue("hunger");
     this.shareBlocks = GameConfiguration.getConfig().getValue("share_blocks");
