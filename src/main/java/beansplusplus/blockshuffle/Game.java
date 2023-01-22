@@ -60,7 +60,11 @@ public class Game implements Listener {
     this.ticksPerBlock = (int) ((double) GameConfiguration.getConfig().getValue("minutes_per_block") * 60.0 * 20.0);
 
     this.shuffler = new BlockShuffler();
-    shuffler.calculateFrequencies(Bukkit.getWorld("world"), Bukkit.getWorld("world_nether"), 2500);
+
+    int border = (int) world.getWorldBorder().getMaxSize();
+    if (border > 2500) border = 2500; // anything outside this range tasks ages to get to anyway
+
+    shuffler.calculateFrequencies(Bukkit.getWorld("world"), Bukkit.getWorld("world_nether"), border);
 
     for (Player player : Bukkit.getOnlinePlayers()) {
       scores.put(player.getName(), 0);
