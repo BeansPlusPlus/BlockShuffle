@@ -58,7 +58,7 @@ COBBLESTONE:
 OAK_PLANKS:
   frequency: 1.0
 SPRUCE_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -67,30 +67,30 @@ SPRUCE_PLANKS:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_PLANKS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_PLANKS:
@@ -104,7 +104,7 @@ WARPED_PLANKS:
 OAK_SAPLING:
   frequency: 1.0
 SPRUCE_SAPLING:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -113,30 +113,30 @@ SPRUCE_SAPLING:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_SAPLING:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_SAPLING:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_SAPLING:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_SAPLING:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_PROPAGULE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 BEDROCK:
@@ -196,7 +196,7 @@ RAW_GOLD_BLOCK:
 AMETHYST_BLOCK:
   frequency: 1.0
 BUDDING_AMETHYST:
-  frequency: 1.0
+  frequency: 0.5
 IRON_BLOCK:
   frequency: 1.0
 COPPER_BLOCK:
@@ -214,7 +214,7 @@ CUT_COPPER_SLAB:
 OAK_LOG:
   frequency: 1.0
 SPRUCE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -223,38 +223,38 @@ SPRUCE_LOG:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 MANGROVE_ROOTS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 MUDDY_MANGROVE_ROOTS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_STEM:
@@ -268,7 +268,7 @@ WARPED_STEM:
 STRIPPED_OAK_LOG:
   frequency: 1.0
 STRIPPED_SPRUCE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -277,30 +277,30 @@ STRIPPED_SPRUCE_LOG:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 STRIPPED_BIRCH_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 STRIPPED_JUNGLE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 STRIPPED_ACACIA_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 STRIPPED_DARK_OAK_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 STRIPPED_MANGROVE_LOG:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 STRIPPED_CRIMSON_STEM:
@@ -314,7 +314,7 @@ STRIPPED_WARPED_STEM:
 STRIPPED_OAK_WOOD:
   frequency: 1.0
 STRIPPED_SPRUCE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -323,30 +323,30 @@ STRIPPED_SPRUCE_WOOD:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 STRIPPED_BIRCH_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 STRIPPED_JUNGLE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 STRIPPED_ACACIA_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 STRIPPED_DARK_OAK_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 STRIPPED_MANGROVE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 STRIPPED_CRIMSON_HYPHAE:
@@ -360,7 +360,7 @@ STRIPPED_WARPED_HYPHAE:
 OAK_WOOD:
   frequency: 1.0
 SPRUCE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -369,30 +369,30 @@ SPRUCE_WOOD:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_WOOD:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_HYPHAE:
@@ -406,7 +406,7 @@ WARPED_HYPHAE:
 OAK_LEAVES:
   frequency: 1.0
 SPRUCE_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -415,30 +415,30 @@ SPRUCE_LEAVES:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_LEAVES:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 AZALEA_LEAVES:
@@ -665,7 +665,7 @@ BAMBOO:
 OAK_SLAB:
   frequency: 1.0
 SPRUCE_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -674,30 +674,30 @@ SPRUCE_SLAB:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_SLAB:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_SLAB:
@@ -727,7 +727,7 @@ MUD_BRICK_SLAB:
 NETHER_BRICK_SLAB:
   frequency: 1.0
 QUARTZ_SLAB:
-  frequency: 1.0
+  frequency: 0.2
 RED_SANDSTONE_SLAB:
   biome:
     - BADLANDS
@@ -747,7 +747,7 @@ PRISMARINE_BRICK_SLAB:
 DARK_PRISMARINE_SLAB:
   frequency: 1.0
 SMOOTH_QUARTZ:
-  frequency: 1.0
+  frequency: 0.2
 SMOOTH_RED_SANDSTONE:
   biome:
     - BADLANDS
@@ -797,7 +797,7 @@ JUKEBOX:
 OAK_FENCE:
   frequency: 1.0
 SPRUCE_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -806,30 +806,30 @@ SPRUCE_FENCE:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_FENCE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_FENCE:
@@ -887,11 +887,11 @@ CHISELED_DEEPSLATE:
 REINFORCED_DEEPSLATE:
   frequency: 1.0
 BROWN_MUSHROOM_BLOCK:
-  frequency: 1.0
+  frequency: 0.3
 RED_MUSHROOM_BLOCK:
-  frequency: 1.0
+  frequency: 0.3
 MUSHROOM_STEM:
-  frequency: 1.0
+  frequency: 0.3
 IRON_BARS:
   frequency: 1.0
 CHAIN:
@@ -899,6 +899,9 @@ CHAIN:
 GLASS_PANE:
   frequency: 1.0
 MELON:
+  biome:
+    - JUNGLE
+    - BAMBOO_JUNGLE
   frequency: 1.0
 VINE:
   frequency: 1.0
@@ -959,7 +962,7 @@ EMERALD_BLOCK:
 OAK_STAIRS:
   frequency: 1.0
 SPRUCE_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -968,30 +971,30 @@ SPRUCE_STAIRS:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_STAIRS:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_STAIRS:
@@ -1042,11 +1045,11 @@ SANDSTONE_WALL:
 DIORITE_WALL:
   frequency: 1.0
 BLACKSTONE_WALL:
-  frequency: 0.1
+  frequency: 0.3
 POLISHED_BLACKSTONE_WALL:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_BRICK_WALL:
-  frequency: 1.0
+  frequency: 0.3
 COBBLED_DEEPSLATE_WALL:
   frequency: 1.0
 POLISHED_DEEPSLATE_WALL:
@@ -1062,15 +1065,15 @@ CHIPPED_ANVIL:
 DAMAGED_ANVIL:
   frequency: 0.3
 CHISELED_QUARTZ_BLOCK:
-  frequency: 1.0
+  frequency: 0.2
 QUARTZ_BLOCK:
-  frequency: 1.0
+  frequency: 0.2
 QUARTZ_BRICKS:
-  frequency: 1.0
+  frequency: 0.2
 QUARTZ_PILLAR:
-  frequency: 1.0
+  frequency: 0.2
 QUARTZ_STAIRS:
-  frequency: 1.0
+  frequency: 0.2
 WHITE_TERRACOTTA:
   frequency: 0.1
 ORANGE_TERRACOTTA:
@@ -1638,7 +1641,7 @@ STONE_STAIRS:
 SMOOTH_SANDSTONE_STAIRS:
   frequency: 1.0
 SMOOTH_QUARTZ_STAIRS:
-  frequency: 1.0
+  frequency: 0.2
 GRANITE_STAIRS:
   frequency: 1.0
 ANDESITE_STAIRS:
@@ -1674,7 +1677,7 @@ MOSSY_COBBLESTONE_SLAB:
 SMOOTH_SANDSTONE_SLAB:
   frequency: 1.0
 SMOOTH_QUARTZ_SLAB:
-  frequency: 1.0
+  frequency: 0.2
 GRANITE_SLAB:
   frequency: 1.0
 ANDESITE_SLAB:
@@ -1754,11 +1757,11 @@ NOTE_BLOCK:
 STONE_BUTTON:
   frequency: 1.0
 POLISHED_BLACKSTONE_BUTTON:
-  frequency: 1.0
+  frequency: 0.3
 OAK_BUTTON:
   frequency: 1.0
 SPRUCE_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -1767,30 +1770,30 @@ SPRUCE_BUTTON:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_BUTTON:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_BUTTON:
@@ -1804,7 +1807,7 @@ WARPED_BUTTON:
 STONE_PRESSURE_PLATE:
   frequency: 1.0
 POLISHED_BLACKSTONE_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 0.3
 LIGHT_WEIGHTED_PRESSURE_PLATE:
   frequency: 1.0
 HEAVY_WEIGHTED_PRESSURE_PLATE:
@@ -1812,7 +1815,7 @@ HEAVY_WEIGHTED_PRESSURE_PLATE:
 OAK_PRESSURE_PLATE:
   frequency: 1.0
 SPRUCE_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -1821,30 +1824,30 @@ SPRUCE_PRESSURE_PLATE:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_PRESSURE_PLATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_PRESSURE_PLATE:
@@ -1860,7 +1863,7 @@ IRON_DOOR:
 OAK_DOOR:
   frequency: 1.0
 SPRUCE_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -1869,30 +1872,30 @@ SPRUCE_DOOR:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_DOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_DOOR:
@@ -1908,7 +1911,7 @@ IRON_TRAPDOOR:
 OAK_TRAPDOOR:
   frequency: 1.0
 SPRUCE_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -1917,30 +1920,30 @@ SPRUCE_TRAPDOOR:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_TRAPDOOR:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_TRAPDOOR:
@@ -1954,7 +1957,7 @@ WARPED_TRAPDOOR:
 OAK_FENCE_GATE:
   frequency: 1.0
 SPRUCE_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -1963,30 +1966,30 @@ SPRUCE_FENCE_GATE:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_FENCE_GATE:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_FENCE_GATE:
@@ -2012,7 +2015,7 @@ WHEAT:
 OAK_SIGN:
   frequency: 1.0
 SPRUCE_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SNOWY_TAIGA
     - SNOWY_PLAINS
@@ -2021,30 +2024,30 @@ SPRUCE_SIGN:
     - OLD_GROWTH_PINE_TAIGA
     - OLD_GROWTH_SPRUCE_TAIGA
 BIRCH_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - FOREST
     - FLOWER_FOREST
     - BIRCH_FOREST
     - OLD_GROWTH_BIRCH_FOREST
 JUNGLE_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - JUNGLE
     - BAMBOO_JUNGLE
     - SPARSE_JUNGLE
 ACACIA_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - SAVANNA
     - SAVANNA_PLATEAU
     - WINDSWEPT_SAVANNA
 DARK_OAK_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - DARK_FOREST
 MANGROVE_SIGN:
-  frequency: 1.0
+  frequency: 2.0
   biome:
     - MANGROVE_SWAMP
 CRIMSON_SIGN:
@@ -2208,29 +2211,29 @@ LODESTONE:
 CRYING_OBSIDIAN:
   frequency: 1.0
 BLACKSTONE:
-  frequency: 0.1
+  frequency: 0.03
 BLACKSTONE_SLAB:
-  frequency: 0.1
+  frequency: 0.03
 BLACKSTONE_STAIRS:
-  frequency: 0.1
+  frequency: 0.03
 GILDED_BLACKSTONE:
-  frequency: 0.2
+  frequency: 0.06
 POLISHED_BLACKSTONE:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_SLAB:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_STAIRS:
-  frequency: 1.0
+  frequency: 0.3
 CHISELED_POLISHED_BLACKSTONE:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_BRICKS:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_BRICK_SLAB:
-  frequency: 1.0
+  frequency: 0.3
 POLISHED_BLACKSTONE_BRICK_STAIRS:
-  frequency: 1.0
+  frequency: 0.3
 CRACKED_POLISHED_BLACKSTONE_BRICKS:
-  frequency: 1.0
+  frequency: 0.3
 RESPAWN_ANCHOR:
   frequency: 0.5
 CANDLE:
@@ -2402,7 +2405,10 @@ NETHER_PORTAL:
 PUMPKIN_STEM:
   frequency: 1.0
 MELON_STEM:
-  frequency: 0.3
+  biome:
+    - JUNGLE
+    - BAMBOO_JUNGLE
+  frequency: 1.0
 WATER_CAULDRON:
   frequency: 1.0
 LAVA_CAULDRON:
