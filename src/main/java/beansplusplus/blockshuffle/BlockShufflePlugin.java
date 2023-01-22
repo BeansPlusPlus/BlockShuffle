@@ -2,6 +2,7 @@ package beansplusplus.blockshuffle;
 
 import beansplusplus.gameconfig.ConfigLoader;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.block.Biome;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,6 +30,7 @@ public class BlockShufflePlugin extends JavaPlugin implements CommandExecutor, L
     game = new Game(this);
     game.start();
 
+
     return true;
   }
 
@@ -40,5 +42,4 @@ public class BlockShufflePlugin extends JavaPlugin implements CommandExecutor, L
     player.sendMessage(ChatColor.GREEN + "/config" + ChatColor.WHITE + " to configure game setup");
     player.sendMessage(ChatColor.GREEN + "/start" + ChatColor.WHITE + " to begin");
   }
-
 }

@@ -26,7 +26,7 @@ public class Game implements Listener {
   private boolean hunger;
   private boolean shareBlocks;
 
-  private int minsPerBlock;
+  private int ticksPerBlock;
 
   private int currentTask;
   private int timer;
@@ -57,9 +57,10 @@ public class Game implements Listener {
     this.blocksToWin = GameConfiguration.getConfig().getValue("blocks_to_win");
     this.hunger = GameConfiguration.getConfig().getValue("hunger");
     this.shareBlocks = GameConfiguration.getConfig().getValue("share_blocks");
-    this.minsPerBlock = GameConfiguration.getConfig().getValue("minutes_per_block");
+    this.ticksPerBlock = (int) ((double) GameConfiguration.getConfig().getValue("minutes_per_block") * 60.0 * 20.0);
 
     this.shuffler = new BlockShuffler();
+    shuffler.calculateFrequencies(Bukkit.getWorld("world"), Bukkit.getWorld("world_nether"), 2500);
 
     for (Player player : Bukkit.getOnlinePlayers()) {
       scores.put(player.getName(), 0);
@@ -138,7 +139,7 @@ public class Game implements Listener {
       if (!shareBlocks) block = shuffler.nextBlockType();
     }
 
-    timer = minsPerBlock * 60 * 20;
+    timer = ticksPerBlock;
     currentTask = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, this::runTimer, 0, 1);
   }
 

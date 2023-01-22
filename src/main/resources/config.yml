@@ -19,6 +19,6 @@ grace_period_seconds:
   min: 0
   default: 0
 minutes_per_block:
-  type: int
+  type: double
   min: 0
   default: 0
