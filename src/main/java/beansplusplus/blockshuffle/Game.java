@@ -99,28 +99,34 @@ public class Game implements Listener {
     Bukkit.getScheduler().cancelTasks(plugin);
   }
 
-  private void refreshScoreboard() {
-    for (Player p : Bukkit.getOnlinePlayers()) {
-      p.setScoreboard(getScoreboard(p));
+  private void runTimer() {
+    if (timer > 0) {
+      timer--;
+
+      if (timer == 200) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+          player.sendMessage(ChatColor.YELLOW + "10 seconds remaining...");
+        }
+      }
+
+      if (timer == 1200) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+          player.sendMessage(ChatColor.YELLOW + "1 minute remaining...");
+        }
+      }
+
+      if (timer == 0) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+          player.sendMessage(ChatColor.YELLOW + "No one found their block this time!");
+        }
+
+        Bukkit.getScheduler().cancelTask(currentTask);
+        nextRound();
+        return;
+      }
     }
-  }
-
-  public Scoreboard getScoreboard(Player player) {
-    Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
-
-    Objective obj = scoreboard.registerNewObjective("scoreboard", "scoreboard",
-        ChatColor.GOLD + "Block Shuffle - Blocks to win: " + ChatColor.RED + blocksToWin);
-    obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-
-    for (String name : scores.keySet()) {
-      obj.getScore(name).setScore(scores.get(name));
-    }
-
-    if (blocks.containsKey(player.getName())) {
-      obj.getScore(ChatColor.BLUE + "Block: " + ChatColor.GREEN + blockName(blocks.get(player.getName()))).setScore(-1);
-    }
-
-    return scoreboard;
+    List<String> winningPlayers = playersTouchingBlock();
+    if (!winningPlayers.isEmpty()) winRound(winningPlayers);
   }
 
   private void nextRound() {
@@ -165,56 +171,63 @@ public class Game implements Listener {
     return false;
   }
 
-  private void runTimer() {
-    if (timer > 0) {
-      timer--;
-
-      if (timer == 200) {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-          player.sendMessage(ChatColor.YELLOW + "10 seconds remaining...");
-        }
-      }
-
-      if (timer == 1200) {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-          player.sendMessage(ChatColor.YELLOW + "1 minute remaining...");
-        }
-      }
-
-      if (timer == 0) {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-          player.sendMessage(ChatColor.YELLOW + "No one found their block this time!");
-        }
-
-        Bukkit.getScheduler().cancelTask(currentTask);
-        nextRound();
-        return;
+  private void winRound(List<String> winningPlayers) {
+    for (String p : winningPlayers) {
+      scores.put(p, scores.get(p) + 1);
+      for (Player player : Bukkit.getOnlinePlayers()) {
+        player.sendMessage(ChatColor.GREEN + p + ChatColor.YELLOW + " found the block and got a point!");
       }
     }
-    List<String> winningPlayers = playersAboveBlock();
-    if (!winningPlayers.isEmpty()) {
-      for (String p : winningPlayers) {
-        scores.put(p, scores.get(p) + 1);
-        for (Player player : Bukkit.getOnlinePlayers()) {
-          player.sendMessage(ChatColor.GREEN + p + ChatColor.YELLOW + " found the block and got a point!");
-        }
-      }
-      refreshScoreboard();
-      Bukkit.getScheduler().cancelTask(currentTask);
-      nextRound();
-      return;
+    refreshScoreboard();
+    Bukkit.getScheduler().cancelTask(currentTask);
+    nextRound();
+  }
+
+  private void refreshScoreboard() {
+    for (Player p : Bukkit.getOnlinePlayers()) {
+      p.setScoreboard(getScoreboard(p));
     }
   }
 
-  private List<String> playersAboveBlock() {
+  public Scoreboard getScoreboard(Player player) {
+    Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
+
+    Objective obj = scoreboard.registerNewObjective("scoreboard", "scoreboard",
+        ChatColor.GOLD + "Block Shuffle - Blocks to win: " + ChatColor.RED + blocksToWin);
+    obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+
+    for (String name : scores.keySet()) {
+      obj.getScore(name).setScore(scores.get(name));
+    }
+
+    if (blocks.containsKey(player.getName())) {
+      obj.getScore(ChatColor.BLUE + "Block: " + ChatColor.GREEN + blockName(blocks.get(player.getName()))).setScore(-1);
+    }
+
+    return scoreboard;
+  }
+
+  private List<String> playersTouchingBlock() {
     List<String> players = new ArrayList<>();
     for (Player player : Bukkit.getOnlinePlayers()) {
-      Material material1 = player.getLocation().add(0, -1, 0).getBlock().getType();
-      Material material2 = player.getLocation().getBlock().getType();
+      List<Material> materials = List.of(
+          player.getLocation().add(0, 0, 0).getBlock().getType(),
+          player.getLocation().add(0, -1, 0).getBlock().getType(),
+          player.getLocation().add(0, 1, 0).getBlock().getType(),
+          player.getLocation().add(0, 2, 0).getBlock().getType(),
+          player.getLocation().add(1, 0, 0).getBlock().getType(),
+          player.getLocation().add(-1, 0, 0).getBlock().getType(),
+          player.getLocation().add(0, 0, 1).getBlock().getType(),
+          player.getLocation().add(0, 0, -1).getBlock().getType(),
+          player.getLocation().add(1, 1, 0).getBlock().getType(),
+          player.getLocation().add(-1, 1, 0).getBlock().getType(),
+          player.getLocation().add(0, 1, 1).getBlock().getType(),
+          player.getLocation().add(0, 1, -1).getBlock().getType()
+      );
 
       if (!blocks.containsKey(player.getName())) continue;
 
-      if (material1 == blocks.get(player.getName()) || material2 == blocks.get(player.getName())) {
+      if (materials.contains(blocks.get(player.getName()))) {
         players.add(player.getName());
       }
     }
