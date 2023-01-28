@@ -31,6 +31,12 @@ public class Game implements Listener {
   private int currentTask;
   private int timer;
 
+  private int gracePeriodSecs;
+
+  private boolean keepInventory;
+
+  private boolean pvp;
+
   private Map<String, Material> blocks = new HashMap<>();
 
   private Map<String, Integer> scores = new HashMap<>();
@@ -40,10 +46,24 @@ public class Game implements Listener {
 
   public Game(BlockShufflePlugin plugin) {
     this.plugin = plugin;
+    blocksToWin = GameConfiguration.getConfig().getValue("blocks_to_win");
+    hunger = GameConfiguration.getConfig().getValue("hunger");
+    shareBlocks = GameConfiguration.getConfig().getValue("share_blocks");
+    ticksPerBlock = (int) ((double) GameConfiguration.getConfig().getValue("minutes_per_block") * 60.0 * 20.0);
+    gracePeriodSecs = GameConfiguration.getConfig().getValue("grace_period_seconds");
+    keepInventory = GameConfiguration.getConfig().getValue("keep_inventory");
+    pvp = GameConfiguration.getConfig().getValue("pvp");
   }
 
   public void start() {
+    Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
+
+    World world = Bukkit.getWorld("world");
+    world.setTime(1000);
+
     for (Player player : Bukkit.getOnlinePlayers()) {
+      scores.put(player.getName(), 0);
+
       player.setHealth(20);
       player.setLevel(0);
       player.setFoodLevel(20);
@@ -51,38 +71,12 @@ public class Game implements Listener {
       player.setGameMode(GameMode.SURVIVAL);
     }
 
-    World world = Bukkit.getWorld("world");
-    world.setTime(1000);
-
-    this.blocksToWin = GameConfiguration.getConfig().getValue("blocks_to_win");
-    this.hunger = GameConfiguration.getConfig().getValue("hunger");
-    this.shareBlocks = GameConfiguration.getConfig().getValue("share_blocks");
-    this.ticksPerBlock = (int) ((double) GameConfiguration.getConfig().getValue("minutes_per_block") * 60.0 * 20.0);
-
-    this.shuffler = new BlockShuffler();
-
-    int border = (int) world.getWorldBorder().getMaxSize();
-    if (border > 2500) border = 2500; // anything outside this range tasks ages to get to anyway
-
-    shuffler.calculateFrequencies(Bukkit.getWorld("world"), Bukkit.getWorld("world_nether"), border);
-
-    for (Player player : Bukkit.getOnlinePlayers()) {
-      scores.put(player.getName(), 0);
-    }
-
-    boolean keepInventory = GameConfiguration.getConfig().getValue("keep_inventory");
-    boolean pvp = GameConfiguration.getConfig().getValue("pvp");
-
     for (World w : Bukkit.getWorlds()) {
       w.setGameRule(GameRule.KEEP_INVENTORY, keepInventory);
       w.setPVP(pvp);
     }
 
-    Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
-    refreshScoreboard();
-
-
-    int gracePeriodSecs = GameConfiguration.getConfig().getValue("grace_period_seconds");
+    setupShuffler();
 
     if (gracePeriodSecs == 0) {
       pickNextBlock();
@@ -97,6 +91,15 @@ public class Game implements Listener {
   public void end() {
     HandlerList.unregisterAll(this);
     Bukkit.getScheduler().cancelTasks(plugin);
+  }
+
+  private void setupShuffler() {
+    shuffler = new BlockShuffler();
+    World world = Bukkit.getWorld("world");
+    int border = (int) world.getWorldBorder().getMaxSize();
+    if (border > 2500) border = 2500; // anything outside this range tasks ages to get to anyway
+
+    shuffler.calculateFrequencies(Bukkit.getWorld("world"), Bukkit.getWorld("world_nether"), border);
   }
 
   private void runTimer() {
