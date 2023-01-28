@@ -100,14 +100,12 @@ public class Game implements Listener {
   }
 
   private void refreshScoreboard() {
-    Scoreboard scoreboard = getScoreboard();
-
     for (Player p : Bukkit.getOnlinePlayers()) {
-      p.setScoreboard(scoreboard);
+      p.setScoreboard(getScoreboard(p));
     }
   }
 
-  public Scoreboard getScoreboard() {
+  public Scoreboard getScoreboard(Player player) {
     Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
 
     Objective obj = scoreboard.registerNewObjective("scoreboard", "scoreboard",
@@ -116,6 +114,10 @@ public class Game implements Listener {
 
     for (String name : scores.keySet()) {
       obj.getScore(name).setScore(scores.get(name));
+    }
+
+    if (blocks.containsKey(player.getName())) {
+      obj.getScore(ChatColor.BLUE + "Block: " + ChatColor.GREEN + blockName(blocks.get(player.getName()))).setScore(-1);
     }
 
     return scoreboard;
@@ -142,6 +144,8 @@ public class Game implements Listener {
 
       if (!shareBlocks) block = shuffler.nextBlockType();
     }
+
+    refreshScoreboard();
 
     timer = ticksPerBlock;
     currentTask = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, this::runTimer, 0, 1);
