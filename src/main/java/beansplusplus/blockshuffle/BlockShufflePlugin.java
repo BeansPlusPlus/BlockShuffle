@@ -1,45 +1,45 @@
 package beansplusplus.blockshuffle;
 
-import beansplusplus.gameconfig.ConfigLoader;
-import net.md_5.bungee.api.ChatColor;
-import org.bukkit.block.Biome;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
+import beansplusplus.beansgameplugin.BeansGamePlugin;
+import beansplusplus.beansgameplugin.GameConfiguration;
+import beansplusplus.beansgameplugin.GameCreator;
+import beansplusplus.beansgameplugin.GameState;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class BlockShufflePlugin extends JavaPlugin implements CommandExecutor, Listener {
-  private Game game;
+import java.io.InputStream;
+import java.util.List;
+
+public class BlockShufflePlugin extends JavaPlugin implements GameCreator {
 
   public void onEnable() {
-    ConfigLoader.loadFromInput(getResource("config.yml"));
+    BeansGamePlugin beansGamePlugin = (BeansGamePlugin) getServer().getPluginManager().getPlugin("BeansGamePlugin");
+    beansGamePlugin.registerGame(this);
     BlockShuffler.loadAllBlockTypes(getResource("blocks.yml"));
-    getServer().getPluginManager().registerEvents(this, this);
-    getCommand("start").setExecutor(this);
   }
 
   @Override
-  public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-    if (game != null) {
-      game.end();
-    }
-    game = new Game(this);
-    game.start();
+  public beansplusplus.beansgameplugin.Game createGame(GameConfiguration config, GameState state) {
+    return new BlockShuffleGame(this, config, state);
+  }
 
-
+  @Override
+  public boolean isValidSetup(CommandSender commandSender, GameConfiguration gameConfiguration) {
     return true;
   }
 
-  @EventHandler
-  public void onPlayerJoin(PlayerJoinEvent e) {
-    Player player = e.getPlayer();
+  @Override
+  public InputStream config() {
+    return getResource("config.yml");
+  }
 
-    player.sendMessage(ChatColor.BLUE + "Welcome to Block Shuffle");
-    player.sendMessage(ChatColor.GREEN + "/config" + ChatColor.WHITE + " to configure game setup");
-    player.sendMessage(ChatColor.GREEN + "/start" + ChatColor.WHITE + " to begin");
+  @Override
+  public List<String> rulePages() {
+    return List.of("TODO");
+  }
+
+  @Override
+  public String name() {
+    return "Block Shuffle";
   }
 }

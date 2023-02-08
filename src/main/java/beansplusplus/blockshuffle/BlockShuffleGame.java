@@ -1,6 +1,8 @@
 package beansplusplus.blockshuffle;
 
-import beansplusplus.gameconfig.GameConfiguration;
+import beansplusplus.beansgameplugin.Game;
+import beansplusplus.beansgameplugin.GameConfiguration;
+import beansplusplus.beansgameplugin.GameState;
 import org.apache.commons.lang3.text.WordUtils;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -20,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Game implements Listener {
+public class BlockShuffleGame implements Listener, Game {
   private int blocksToWin;
 
   private boolean hunger;
@@ -43,16 +45,19 @@ public class Game implements Listener {
 
   private Plugin plugin;
   private BlockShuffler shuffler;
+  private GameState state;
 
-  public Game(BlockShufflePlugin plugin) {
+  public BlockShuffleGame(BlockShufflePlugin plugin, GameConfiguration config, GameState state) {
     this.plugin = plugin;
-    blocksToWin = GameConfiguration.getConfig().getValue("blocks_to_win");
-    hunger = GameConfiguration.getConfig().getValue("hunger");
-    shareBlocks = GameConfiguration.getConfig().getValue("share_blocks");
-    ticksPerBlock = (int) ((double) GameConfiguration.getConfig().getValue("minutes_per_block") * 60.0 * 20.0);
-    gracePeriodSecs = GameConfiguration.getConfig().getValue("grace_period_seconds");
-    keepInventory = GameConfiguration.getConfig().getValue("keep_inventory");
-    pvp = GameConfiguration.getConfig().getValue("pvp");
+    this.state = state;
+
+    blocksToWin = config.getValue("blocks_to_win");
+    hunger = config.getValue("hunger");
+    shareBlocks = config.getValue("share_blocks");
+    ticksPerBlock = (int) ((double) config.getValue("minutes_per_block") * 60.0 * 20.0);
+    gracePeriodSecs = config.getValue("grace_period_seconds");
+    keepInventory = config.getValue("keep_inventory");
+    pvp = config.getValue("pvp");
   }
 
   public void start() {
@@ -88,7 +93,8 @@ public class Game implements Listener {
     }
   }
 
-  public void end() {
+  @Override
+  public void cleanUp() {
     HandlerList.unregisterAll(this);
     Bukkit.getScheduler().cancelTasks(plugin);
   }
@@ -103,6 +109,8 @@ public class Game implements Listener {
   }
 
   private void runTimer() {
+    if (state.isPaused()) return;
+
     if (timer > 0) {
       timer--;
 
@@ -134,7 +142,7 @@ public class Game implements Listener {
 
   private void nextRound() {
     if (checkForWinner()) {
-      end();
+      state.stopGame();
       return;
     }
 
